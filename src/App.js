@@ -1,11 +1,15 @@
-import Countries from "./components/Countries";
 import Navbar from "./components/Navbar";
+import CountriesPage from "./pages/CountriesPage";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Countries />
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <CountriesPage />
+      </main>
     </>
   );
 }
