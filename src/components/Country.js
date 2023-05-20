@@ -46,7 +46,7 @@ function Country({ country }) {
   };
 
   return (
-    <div className="pt-10 px-7 lg:pt-20">
+    <div className="pt-10 pb-14 lg:pb-0 px-7 lg:pt-20">
       <button
         onClick={handleBackHome}
         className="flex items-center gap-2 dark:text-[#FFFFFF] text-[#111517] dark:bg-[#2B3844] bg-[#FFFFFF] rounded-md py-3 px-9 font-Nunito"
