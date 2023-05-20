@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
-import CountryDetailsList from "./CountryDetailsList";
 import CountryBorders from "./CountryBorders";
 
 function Country({ country }) {
@@ -24,21 +23,6 @@ function Country({ country }) {
     (currency) => `Currency: ${currency.name}`
   );
   const languageNames = `Languages: ${Object.values(languages).join(", ")}`;
-
-  const leftDetails = [
-    `Native Name: ${nativeName}`,
-    `Population: ${formattedPopulation}`,
-    `Region: ${region}`,
-    `Sub Region: ${subregion}`,
-    `Capital: ${capital}`,
-  ];
-
-  const rightDetails = [
-    `Top Level Domain: ${tld.join(", ")}`,
-    ...currencyNames,
-    languageNames,
-  ];
-
   const navigate = useNavigate();
 
   const handleBackHome = () => {
@@ -66,10 +50,18 @@ function Country({ country }) {
           </h1>
           <div className="flex flex-col lg:flex-row gap-y-8 md:gap-x-28 mt-4 lg:mt-6">
             <ul className="dark:text-[#FFFFFF] text-[#111517]">
-              <CountryDetailsList details={leftDetails} />
+              <li className="font-Nunito">Native Name: {nativeName}</li>
+              <li className="font-Nunito mt-1">Population: {formattedPopulation}</li>
+              <li className="font-Nunito mt-1">Region: {region}</li>
+              <li className="font-Nunito mt-1">Region: {subregion}</li>
+              <li className="font-Nunito mt-1">Capital: {capital}</li>
             </ul>
             <ul className="dark:text-[#FFFFFF] text-[#111517]">
-              <CountryDetailsList details={rightDetails} />
+              <li className="font-Nunito">
+                Top Level Domain: {tld.join(", ")}
+              </li>
+              <li className="font-Nunito mt-1">{currencyNames}</li>
+              <li className="font-Nunito mt-1">{languageNames}</li>
             </ul>
           </div>
           <ul className="flex flex-wrap items-center gap-y-2 dark:text-[#FFFFFF] text-[#111517] mt-8 lg:mt-16">
