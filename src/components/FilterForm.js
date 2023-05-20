@@ -52,14 +52,12 @@ function FilterForm({ value, onChange }) {
         onClick={handleClick}
       >
         {value?.label || "Filter by Region"}
-        {isOpen ? (
-          <GoChevronDown />
-        ) : (
-          <GoChevronRight />
-        )}
+        {isOpen ? <GoChevronDown /> : <GoChevronRight />}
       </Panel>
 
-      {isOpen && <Panel className="absolute mt-2 pl-4">{renderedOptions}</Panel>}
+      {isOpen && (
+        <Panel className="absolute mt-2 pl-4">{renderedOptions}</Panel>
+      )}
     </div>
   );
 }
