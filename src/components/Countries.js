@@ -3,14 +3,14 @@ import Card from "./Card";
 
 function Countries({ country }) {
   const { flags, name, population, region, capital } = country;
-  const numberFormat = population
+  const formattedPopulation = population
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   const capitalCheck = capital ? capital : "N/A";
 
   return (
     <Link to={`/country/${name.common}`}>
-      <Card className="w-full max-w-[265px] mx-auto dark:bg-[#2B3844] bg-[#FFFFFF] cursor-pointer">
+      <Card className="w-full max-w-[16.563rem] mx-auto dark:bg-[#2B3844] bg-[#FFFFFF] cursor-pointer">
         <img
           className="w-full h-[160px] object-cover"
           src={flags.png}
@@ -21,7 +21,7 @@ function Countries({ country }) {
             {name.common}
           </h1>
           <ul className="font-Nunito dark:text-[#FFFFFF] text-[#111517] mt-4">
-            <li>Population: {numberFormat}</li>
+            <li>Population: {formattedPopulation}</li>
             <li className="mt-2">Region: {region}</li>
             <li className="mt-2">Capital: {capitalCheck}</li>
           </ul>
