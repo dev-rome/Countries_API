@@ -4,8 +4,8 @@ export const options = [
     value: "africa",
   },
   {
-    label: "America",
-    value: "america",
+    label: "Americas",
+    value: "americas",
   },
   {
     label: "Asia",
